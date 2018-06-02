@@ -2,18 +2,20 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 }.to_i %>
+  timeout: 5000
+  host: <%= ENV['DATA_DB_HOST'] %>
+  username: <%= ENV['DATA_DB_USER'] %>
+  password: <%= ENV['DATA_DB_PASS'] %>
 
 development:
   <<: *default
-  database: rails-app_development
+  database: sebquito_development
 
-  test:
+test:
   <<: *default
-  database: rails-app_test
+  database: sebquito_test
 
 production:
   <<: *default
-  database: rails-app_production
-  username: rails-app
-  password: <%= ENV['RAILS-APP_DATABASE_PASSWORD'] %>
+  database: sebquito_production
