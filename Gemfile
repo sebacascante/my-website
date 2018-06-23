@@ -17,7 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'jquery-rails'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
-
+gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'bootstrap-sass-extras'
 
 
 group :development, :test do
